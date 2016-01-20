@@ -1,1 +1,1 @@
-web: python ponies.py
+web: python ponygifbot.py
