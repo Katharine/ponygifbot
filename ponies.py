@@ -64,7 +64,7 @@ def process_image(image):
 def find_ponies(query):
     print("Searching...")
     results = requests.get("https://derpibooru.org/search.json", {
-        'q': 'animated, safe, ' + query,
+        'q': 'animated, safe, -transparent background, ' + query,
         'sf': 'score',
         'sd': 'desc'
     })
