@@ -56,7 +56,7 @@ def process_image(image):
         return None
     mp4_url = convert_to_mp4(medium_size)
     if mp4_url is not None:
-        return mp4_url, thumb_size, image['id_number'], (image['width'], image['height'])
+        return mp4_url, thumb_size, image['id'], (image['width'], image['height'])
     else:
         return None
 
@@ -86,7 +86,7 @@ def process_ponies(ponies, time_limit=None):
         try:
             result = greenlet.get(block=False)
         except gevent.Timeout:
-            print("Giving up on http://derpiboo.ru/{}".format(ponies[i]['id_number']))
+            print("Giving up on http://derpiboo.ru/{}".format(ponies[i]['id']))
             timed_out += 1
         else:
             if result is not None:
